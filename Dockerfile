@@ -9,8 +9,8 @@ ARG no_proxy
 RUN yum update -y
 
 # Add GE certificates to Trust
-COPY cert/*.crt /etc/pki/ca-trust/source/anchors/
-RUN update-ca-trust
+#COPY cert/*.crt /etc/pki/ca-trust/source/anchors/
+#RUN update-ca-trust
 
 
 #Install basic tools... 
