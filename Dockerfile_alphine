@@ -1,0 +1,21 @@
+FROM alpine
+
+MAINTAINER Raj Ramalingam <Raj.Ramalingam@bhge.com>
+
+ARG http_proxy
+ARG https_proxy
+ARG no_proxy
+
+#RUN update Alphine
+RUN apk update
+
+#Add ca-certificates
+RUN apk --no-cache add ca-certificates 
+
+# Add GE certificates to Trust
+COPY cert/*.crt /usr/local/share/ca-certificates/ 
+RUN update-ca-certificates
+
+#Add curl, bash
+RUN apk add curl bash
+
