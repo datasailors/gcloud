@@ -14,7 +14,7 @@ RUN yum update -y
 
 
 #Install basic tools... 
-RUN yum install -y wget
+RUN yum install -y wget openssh-clients
 
 #Install 'which'
 RUN yum install -y which
